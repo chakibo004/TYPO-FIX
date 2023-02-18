@@ -2,20 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Correcteur d'orthographe</title>
+  <title>Spell Checker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Correcteur d'orthographe</h1>
-  
-  <label for="userInput">Entrez votre texte :</label><br>
-  <textarea id="userInput"></textarea>
-  <br>
-  <button class="checkit">Vérifier l'orthographe</button>
-  
-  <h2>Résultats :</h2>
-  <p id="correctedText"></p>
- 
-  <script src="dist/bundle.js"></script>
+  <div class="container">
+    <h1>Spell Checker</h1>
+    
+    <div class="input-area">
+      <label for="userInput">Enter your text:</label><br>
+      <textarea id="userInput" class="userInput" placeholder="Type or paste your text here"></textarea>
+      <button class="checkit">Check</button>
+    </div>
+
+    <div class="correction-area">
+      <h2> Check your errors by choosing the correct suggestion:</h2>
+      <p> Click on the text area first and wait for underlined red text to appear before starting to correct your paragraph.</p>
+      <grammarly-editor-plugin>
+        <textarea id="correctedText" class="correctedText" placeholder="Corrected text will appear here"></textarea>
+      </grammarly-editor-plugin>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_SS6pDiXKvKaX52LuDdjRVD"></script>
+  <script src="script.js"></script>
 </body>
 </html>
